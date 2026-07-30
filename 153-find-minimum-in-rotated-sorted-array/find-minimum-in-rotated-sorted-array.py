@@ -3,8 +3,7 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
-        Median of Two Sorted Arrays first we hv to to merge the arrays then we have to find the median for the mergeredsorted array
-
+      
         """
 
         i=0
