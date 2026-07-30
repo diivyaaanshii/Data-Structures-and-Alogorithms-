@@ -5,9 +5,23 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        for i in range (len(nums)):
-            if nums[i]==target:
-                return i
+        i=0
+        j=len(nums)-1
+        while i<=j:
+            mid=(i+j)//2
+            if nums[mid]==target:
+                return mid
 
-            
+
+            elif nums[i]<=nums[mid] :
+                if nums[i]<=target<nums[mid]:
+                    j=mid-1
+                else:
+                    i=mid+1
+            else:
+                if nums[mid]<target<=nums[j]:
+                    i=mid+1
+                else:
+                    j=mid-1
+
         return -1
