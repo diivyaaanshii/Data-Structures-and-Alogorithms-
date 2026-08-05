@@ -10,12 +10,15 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[int]
         """
+        if not root:
+            return []
         res=[]
-        def preorder(root):
-            if not root:
-                return 
-            res.append(root.val)
-            preorder(root.left)
-            preorder(root.right)
-        preorder(root)
+        stack=[root]
+        while stack:
+            node=stack.pop()
+            res.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
         return res
