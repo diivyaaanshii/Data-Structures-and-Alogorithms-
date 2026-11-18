@@ -1,26 +1,28 @@
 class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        nums1_copy=nums1[:m]
-        i=0
-        j=0
+        num1copy=nums1[:m]
+        l=0
+        r=0
         idx=0
-        while i<m and j<n:
-            if nums1_copy[i]<=nums2[j]:
-                nums1[idx]=nums1_copy[i]
+        while l<m and r<n:
+            if num1copy[l]<nums2[r]:
+                nums1[idx]=num1copy[l]
                 idx+=1
-                i+=1
+                l+=1
             else:
-                nums1[idx]=nums2[j]
+                nums1[idx]=nums2[r]
                 idx+=1
-                j+=1
-        while i<m:
-            nums1[idx]=nums1_copy[i]
+                r+=1
+        while l<m:
+           
+            nums1[idx]=num1copy[l]
             idx+=1
-            i+=1
-        while j<n:
-            nums1[idx]=nums2[j]
+            l+=1
+        while r<n:
+            nums1[idx]=nums2[r]
             idx+=1
-            j+=1
+            r+=1
+        
